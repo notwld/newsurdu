@@ -20,7 +20,9 @@
     "ios": {
       "supportsTablet": true
     },
+    
     "android": {
+      "package": "com.blurryface.mw",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
