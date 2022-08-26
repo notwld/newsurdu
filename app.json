@@ -20,7 +20,6 @@
     "ios": {
       "supportsTablet": true
     },
-    
     "android": {
       "package": "com.blurryface.mw",
       "adaptiveIcon": {
@@ -30,6 +29,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "28fa8ec2-0409-4e6c-9c08-d0e1212120f6"
+      }
     }
   }
 }
