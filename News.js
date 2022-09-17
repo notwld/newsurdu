@@ -91,6 +91,7 @@ export default function News(props) {
                   image: news.images[index],
                   index: index,
                   id: news.links[index],
+                  data: news,
                 });
               }}
               key={index}
