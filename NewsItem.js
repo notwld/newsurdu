@@ -38,12 +38,12 @@ export default function NewsItem(props) {
         <View style={styles.item}>
      <Image source={{uri: image}} style={{width: "100%", height: 300}} />
       <View>
-        <Text style={{ paddingHorizontal: 10,paddingTop:15,paddingBottom:0 , color: "white", fontSize: 25, fontWeight:"bold", textAlign: "right" }}>
+        <Text style={{ paddingHorizontal: 15,paddingTop:15,paddingBottom:0 , color: "white", fontSize: 25, fontWeight:"bold", textAlign: "right" }}>
           {item}
         </Text>
         {loading?<Loader/>:details.map((item, index) => {
             return (
-                <View key={index} style={{paddingHorizontal:10,paddingVertical:5}}>
+                <View key={index} style={{paddingHorizontal:15,paddingVertical:10}}>
                 <Text style={{ color: "white", fontSize: 18, textAlign: "right" }}>
                     {item}
                 </Text>
