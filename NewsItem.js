@@ -52,15 +52,12 @@ export default function NewsItem(props) {
         }
         )}
         <View style={styles.more}>
-          <Text style={{color:'white',fontSize:25,fontWeight:"bold"}}>
+          <Text style={{color:'white',fontSize:25,fontWeight:"bold",paddingBottom:10}}>
             More Like This
           </Text>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <Related data={props.route.params.data}/>
           <Related data={props.route.params.data}/>
           <Related data={props.route.params.data}/>
-          <Related data={props.route.params.data}/>
-          </ScrollView>
         </View>
       </View>
     </View>
@@ -77,7 +74,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    paddingVertical: 25,
+    paddingTop: 20,
     paddingHorizontal: 15,
+    paddingBottom: 30,
   },
 });
