@@ -47,7 +47,7 @@ export default function News(props) {
     wait(2000).then(() => setRefreshing(false));
   }, [news]);
   useEffect(() => {
-    const unsubscribe = navigation.addListener("focus", () => {
+    
       fetch(
         `https://newsurdu.herokuapp.com/category/${
           !category ? props.route.params.category : category
@@ -66,9 +66,9 @@ export default function News(props) {
           setLoading(false);
         })
         .catch((err) => console.log(err));
-    });
-    return unsubscribe;
-  }, [news]);
+
+    
+  }, [news,refreshing]);
   return (
     <ScrollView
       contentContainerStyle={{ flexGrow: 1, paddingBottom: 30 }}
@@ -85,8 +85,7 @@ export default function News(props) {
             <TouchableOpacity
               activeOpacity={0.2}
               onPress={() => {
-                navigation.navigate("NewsItem",{
-                
+                navigation.navigate("NewsItem", {
                   item: item,
                   image: news.images[index],
                   index: index,

@@ -25,7 +25,7 @@ const NavItem = React.forwardRef(({ item, key, onPressItem }, ref) => {
             fontWeight: "bold",
             color: "white",
             textTransform: "uppercase",
-            fontSize:12
+            fontSize: 12,
           }}
         >
           {item.name}
@@ -88,7 +88,15 @@ const Nav = ({ scrollX, data, onPressItem }) => {
   }, []);
   return (
     <View style={{ position: "absolute", top: 10, width }}>
-      <Text style={{ color: "white", fontSize: 56, fontWeight: "bold" , paddingHorizontal:10,paddingBottom:5 }}>
+      <Text
+        style={{
+          color: "white",
+          fontSize: 56,
+          fontWeight: "bold",
+          paddingHorizontal: 10,
+          paddingBottom: 5,
+        }}
+      >
         NewsUrdu
       </Text>
       <View
@@ -110,57 +118,52 @@ const Nav = ({ scrollX, data, onPressItem }) => {
           );
         })}
       </View>
-       
+
       {measures.length > 0 && (
         <Indicator measures={measures} scrollX={scrollX} data={data} />
       )}
-       
     </View>
   );
 };
 
 export default function Tab() {
-  
-
   const [data, setData] = React.useState([
     {
       id: 1,
       image: require("./assets/latest.jpg"),
       name: "Latest",
-      category:'latest-news',
+      category: "latest-news",
       ref: React.createRef(),
     },
     {
       id: 2,
       image: require("./assets/sports.jpg"),
       name: "Sports",
-      category:'sports',
+      category: "sports",
       ref: React.createRef(),
     },
     {
       id: 3,
       image: require("./assets/world.jpg"),
       name: "World",
-      category:'world',
+      category: "world",
       ref: React.createRef(),
     },
     {
       id: 4,
       image: require("./assets/entertainment2.jpg"),
       name: "Entertainment",
-      category:'entertainment',
+      category: "entertainment",
       ref: React.createRef(),
     },
     {
       id: 5,
       image: require("./assets/business.jpg"),
       name: "Business",
-      category:'business',
+      category: "business",
       ref: React.createRef(),
     },
   ]);
-
-
 
   const scrollX = React.useRef(new Animated.Value(0)).current;
   const ref = React.useRef();
@@ -186,27 +189,36 @@ export default function Tab() {
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => {
           return (
-           <ImageBackground source={item.image} style={{width,height,resizeMode:"cover"}}>
-            <View
+            <ImageBackground
+              source={item.image}
+              style={{ width, height, resizeMode: "cover" }}
+            >
+              <View
                 style={[
                   StyleSheet.absoluteFillObject,
                   { backgroundColor: "rgba(0,0,0,0.3)" },
                 ]}
               ></View>
-             <View
-              style={{
-                width,
-                height,
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-             
-              <View style={{width,flexGrow:1,marginTop:120,paddingBottom:20}}>
-                <News category={item.category} />
+              <View
+                style={{
+                  width,
+                  height,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <View
+                  style={{
+                    width,
+                    flexGrow: 1,
+                    marginTop: 120,
+                    paddingBottom: 20,
+                  }}
+                >
+                  <News category={item.category} />
+                </View>
               </View>
-            </View>
-        </ImageBackground>
+            </ImageBackground>
           );
         }}
       />
